@@ -5,11 +5,7 @@ and a frontend for browsing songs, artists, playlists, charts and users.
 
 **It's missing its SQL.** Every API route calls a function in `queries.py`, and almost all
 of them say `-- TODO`. Until you write the query, that part of the app shows
-**🛠 Not implemented yet**. Write the SQL, save, refresh, and the feature works.
-
-```
-Browser ──PUT /api/songs/12──▶ app.py route ──calls──▶ queries.update_song() ──SQL──▶ tunes.db
-```
+** Not implemented yet**. Write the SQL, save, refresh, and the feature works.
 
 ## Setup
 
@@ -72,27 +68,3 @@ Things worth trying once the features work:
 | `static/` | Frontend (plain HTML/CSS/JS) |
 
 ---
-
-## Instructor notes
-
-- **Demo the finished app:** `WORKSHOP_SOLUTIONS=1 python app.py`
-  (PowerShell: `$env:WORKSHOP_SOLUTIONS=1; python app.py`).
-- **Verify the answer key:** `python check_all.py --solutions` → 28/28.
-- **`solutions.py`** is needed by the test suite. To hide it, hand out the repo without it and share it
-  afterward. The app itself works without it; only `check_all.py` needs it.
-- **Tests never touch real data.** Each test runs your function and the answer key on separate scratch
-  copies of the database, then compares the rows returned (reads) or the tables afterward (writes).
-- **Data is deterministic** (fixed seed), so the whole room sees the same results.
-- **Adding a feature:** add a stub to `queries.py`, the answer to `solutions.py`, a route in `app.py`,
-  UI in `static/app.js`, and a test in `feature_tests.py`.
-
-### Suggested run of show (~90 min)
-
-| Time | Segment |
-|------|---------|
-| 0:00 | Setup. Demo the finished app, then show the student version full of "Not implemented" |
-| 0:10 | Walk the request path together: frontend → `app.py` → `queries.py` → SQL log. Live-code `list_artists` |
-| 0:20 | Students build the Artists page (SELECT, WHERE, INSERT, UPDATE, DELETE) |
-| 0:40 | JOINs explainer using the Database page, then the Songs page |
-| 1:00 | Playlists + Users (junction tables, LEFT JOIN) |
-| 1:15 | GROUP BY / HAVING, then Charts. Bonus for fast finishers |
