@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tunes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <a class="brand" href="#/songs">
+                <span class="logo">♪</span>
+                <span class="brand-name">Tunes</span>
+            </a>
+            <nav class="nav">
+                <a href="#/songs" data-page="songs">🎵 Songs</a>
+                <a href="#/artists" data-page="artists">🎤 Artists</a>
+                <a href="#/playlists" data-page="playlists">📃 Playlists</a>
+                <a href="#/charts" data-page="charts">📈 Charts</a>
+                <a href="#/users" data-page="users">👥 Users</a>
+            </nav>
+            <div class="nav-label">Developer</div>
+            <nav class="nav">
+                <a href="#/database" data-page="database">🗄️ Database</a>
+                <a href="#/freeplay" data-page="freeplay">🧪 Free play</a>
+            </nav>
+            <div class="club">
+                <img src="/static/club-logo.png" alt="Club logo">
+                <span><a href="https://ubacm.org">Built by UB ACM</a></span>
+            </div>
+        </aside>
+
+        <div class="main">
+            <header class="topbar">
+                <label class="signed-in">
+                    Signed in as
+                    <select id="current-user"></select>
+                </label>
+                <button id="toggle-log" class="button ghost small">SQL log <span id="log-count" class="count">0</span></button>
+            </header>
+            <main id="page" class="page"></main>
+        </div>
+    </div>
+
+    <!-- SQL log drawer: every API call and the SQL it ran -->
+    <section id="sql-log" class="sql-log hidden">
+        <div class="sql-log-header">
+            <strong>SQL log</strong>
+            <span class="muted">Every request the app makes, the function it called and the SQL that ran</span>
+            <button id="clear-log" class="button ghost small">Clear</button>
+            <button id="close-log" class="button ghost small">✕</button>
+        </div>
+        <div id="sql-log-entries" class="sql-log-entries"></div>
+    </section>
+
+    <dialog id="modal" class="modal"></dialog>
+    <div id="toasts" class="toasts"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
