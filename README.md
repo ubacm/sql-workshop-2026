@@ -52,7 +52,7 @@ Things worth trying once the features work:
 - Delete an artist who has albums. The FOREIGN KEY blocks it. Then create a new artist and delete that one.
 - Add the same song to a playlist twice. The PRIMARY KEY blocks it.
 - Hit ▶ on a song a bunch of times and watch it climb the Charts.
-- Leave the `WHERE` off `update_artist` and see what happens (then hit Reset database 😅).
+- Leave the `WHERE` off `update_artist` and see what happens (then hit Reset database).
 
 ## Files
 
